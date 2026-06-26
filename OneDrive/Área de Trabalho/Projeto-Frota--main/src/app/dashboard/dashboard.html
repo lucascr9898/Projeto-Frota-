@@ -1,0 +1,56 @@
+<sidenav-responsive-example>
+  <div class="dashboard-wrapper">
+
+    <!-- Cabeçalho da página -->
+    <header class="page-header">
+      <div>
+        <h1>Painel de Controle Operacional</h1>
+        <p>Visão consolidada da frota, viagens e alertas em tempo real.</p>
+      </div>
+
+    </header>
+
+    <!-- Superfície branca unificando os componentes do dashboard -->
+    <div class="dashboard-surface">
+
+      <!--
+        KPIs principais.
+        Antes eram 4 blocos <div class="kpi-card">...</div> copiados e
+        colados, cada um com seu próprio ícone/cor/valor escritos na mão.
+        Agora é 1 componente reaproveitado 4 vezes, só passando os dados
+        que mudam por @Input().
+      -->
+      <section class="kpi-grid">
+        <app-kpi-frota icone="local_shipping" cor="azul" [valor]="frota.totalVeiculos()" label="Veículos na frota" />
+        <app-kpi-frota icone="check_circle" cor="verde" [valor]="frota.disponiveis()" label="Disponíveis agora" />
+        <app-kpi-frota icone="route" cor="laranja" [valor]="frota.emViagem()" label="Em viagem" />
+        <app-kpi-frota icone="build" cor="vermelho" [valor]="frota.emManutencao()" label="Em manutenção" />
+      </section>
+
+      <!-- Status da frota + Volumetria de viagens + Alertas -->
+      <section class="painel-grid">
+
+        <app-status-frota
+          [percDisponiveis]="frota.percDisponiveis()"
+          [percEmViagem]="frota.percEmViagem()"
+          [percManutencao]="frota.percManutencao()"
+        />
+
+        <app-volumetria-viagens
+          [viagensAgendadas]="viagensAgendadas"
+          [viagensEmAndamento]="frota.emViagem()"
+          [viagensFinalizadas]="viagensFinalizadas"
+          [viagensRecentes]="viagensRecentes"
+        />
+
+        <app-alertas-sistema
+          [cnhAlertas]="alertasCnh"
+          [manutencaoAlertas]="alertasManutencao"
+        />
+
+      </section>
+
+    </div>
+
+  </div>
+</sidenav-responsive-example>

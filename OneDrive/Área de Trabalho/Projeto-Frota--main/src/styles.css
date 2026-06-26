@@ -1,0 +1,45 @@
+:root {
+  /* Painel esquerdo (console escuro) */
+  --color-console: #0a0c0b;
+  --color-console-alt: #141715;
+  --color-console-line: #262b28;
+  --color-console-text: #c7d1cb;
+  --color-console-text-dim: #6f7a73;
+  --color-console-accent: #34d17e;
+
+  /* Painel direito (formulário claro) */
+  --color-surface: #232625;
+  --color-surface-alt: #2b2f2d;
+  --color-ink-soft: #9aa39d;
+  --color-border: #3a3f3c;
+
+  --color-primary: #2fbf71;
+  --color-primary-strong: #239a5b;
+  --color-danger: #e2574c;
+  --color-danger-bg: rgba(226, 87, 76, 0.14);
+
+  /* Tipografia */
+  --font-ui: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Espaçamento */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --radius-sm: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: var(--font-ui);
+}

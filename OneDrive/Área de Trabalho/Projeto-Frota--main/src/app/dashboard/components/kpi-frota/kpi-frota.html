@@ -1,0 +1,10 @@
+<!-- Estrutura idêntica à que existia repetida 4x dentro do dashboard.html -->
+<div class="kpi-card">
+  <div class="kpi-icon" [ngClass]="'kpi-icon-' + cor">
+    <mat-icon>{{ icone }}</mat-icon>
+  </div>
+  <div class="kpi-info">
+    <span class="kpi-valor">{{ valor }}</span>
+    <span class="kpi-label">{{ label }}</span>
+  </div>
+</div>

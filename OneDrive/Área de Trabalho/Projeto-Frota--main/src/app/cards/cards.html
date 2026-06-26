@@ -1,0 +1,25 @@
+@for (carro of carros; track carro.placa) {
+  <mat-card class="example-card" appearance="outlined">
+    <div class="image-placeholder">
+      <img [src]="imagemPadrao" [alt]="carro.modelo">
+      <span class="status-badge" [ngClass]="statusClasse(carro.status)">{{ carro.status }}</span>
+    </div>
+
+    <mat-card-header>
+      <mat-card-title>{{ carro.modelo }}</mat-card-title>
+      <mat-card-subtitle>{{ carro.marca }} &middot; {{ carro.placa }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>{{ carro.descricao }}</p>
+      <div class="capacidade-info">
+        <span class="capacidade-label">Capacidade de carga</span>
+        <span class="capacidade-valor">{{ carro.capacidadeKg | number }} kg</span>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button matButton>Ver detalhes</button>
+      <button matButton class="botao-comprar">ALOCAR</button>
+    </mat-card-actions>
+  </mat-card>
+}

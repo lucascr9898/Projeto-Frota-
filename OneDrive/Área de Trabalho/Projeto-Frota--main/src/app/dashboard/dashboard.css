@@ -1,0 +1,98 @@
+/*
+  Depois da separação em componentes, este arquivo cuida só do "esqueleto"
+  da página: wrapper, cabeçalho e os grids que organizam onde cada
+  componente filho fica na tela. Os estilos internos de cada card (KPI,
+  status, volumetria, alertas) moraram para a pasta do componente
+  correspondente — é por isso que esse arquivo encolheu tanto.
+*/
+
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ===== Superfície branca que agrupa os componentes do dashboard ===== */
+.dashboard-surface {
+  background: #ffffff;
+  border: 1px solid #e5e8eb;
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: 0 4px 18px rgba(33, 61, 70, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ===== Cabeçalho ===== */
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  position: relative;
+  color: rgba(0, 0, 0, 0.692);
+  font-size: 22px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 2.0rem;
+  font-weight: 700;
+  color: #213d46;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 12px;
+}
+
+.page-header p {
+  margin: 4px 0 0;
+  font-size: 17px;
+  color: #6b7280;
+  justify-content: center;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+
+/* ===== Grid dos 4 cards de KPI ===== */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+/* ===== Grid dos 3 painéis (status / volumetria / alertas) ===== */
+.painel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* ===== Responsivo =====
+   Continua igual ao original. Como cada <app-...> renderiza sua própria
+   .painel-card / .kpi-card por dentro, as media queries aqui só precisam
+   se preocupar com o GRID (quantas colunas, quem ocupa quanto espaço) —
+   não com o conteúdo interno de cada card.
+*/
+@media (max-width: 1300px) {
+  .painel-grid { grid-template-columns: 1fr 1fr; }
+  .painel-grid > app-alertas-sistema { grid-column: span 2; }
+}
+
+@media (max-width: 1200px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .painel-grid { grid-template-columns: 1fr; }
+  .painel-grid > app-alertas-sistema { grid-column: span 1; }
+}
+
+@media (max-width: 600px) {
+  .kpi-grid { grid-template-columns: 1fr; }
+  .page-header { flex-direction: column; align-items: flex-start; }
+}

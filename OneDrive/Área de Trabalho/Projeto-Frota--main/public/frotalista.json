@@ -1,0 +1,153 @@
+
+{
+  "usuarios": [
+    {
+      "id": "u1",
+      "nome": "Carlos Mendonça",
+      "email": "carlos.admin@frota.com",
+      "senha": "admin123",
+      "perfil": "administrativo"
+    },
+    {
+      "id": "u2",
+      "nome": "Patrícia Lima",
+      "email": "patricia.operacional@frota.com",
+      "senha": "operacional123",
+      "perfil": "operacional"
+    }
+  ],
+  "veiculos": [
+    {
+      "id": "v1",
+      "placa": "ABC1D23",
+      "modelo": "Sprinter 415",
+      "marca": "Mercedes-Benz",
+      "ano": 2022,
+      "capacidadeMaximaCarga": 1500,
+      "status": "disponivel"
+    },
+    {
+      "id": "v2",
+      "placa": "DEF4E56",
+      "modelo": "Daily 35S14",
+      "marca": "Iveco",
+      "ano": 2021,
+      "capacidadeMaximaCarga": 2200,
+      "status": "em_viagem"
+    },
+    {
+      "id": "v3",
+      "placa": "GHI7F89",
+      "modelo": "Accelo 815",
+      "marca": "Mercedes-Benz",
+      "ano": 2020,
+      "capacidadeMaximaCarga": 3500,
+      "status": "manutencao"
+    },
+    {
+      "id": "v4",
+      "placa": "JKL0G12",
+      "modelo": "Delivery Express 9.170",
+      "marca": "Volkswagen",
+      "ano": 2023,
+      "capacidadeMaximaCarga": 4200,
+      "status": "disponivel"
+    },
+    {
+      "id": "v5",
+      "placa": "MNO3H45",
+      "modelo": "Master Furgão",
+      "marca": "Renault",
+      "ano": 2019,
+      "capacidadeMaximaCarga": 1350,
+      "status": "disponivel"
+    }
+  ],
+  "motoristas": [
+    {
+      "id": "m1",
+      "nomeCompleto": "João Pereira da Silva",
+      "cpf": "123.456.789-09",
+      "numeroCnh": "01234567890",
+      "categoriaCnh": "D",
+      "dataValidadeCnh": "2027-03-15",
+      "status": "disponivel"
+    },
+    {
+      "id": "m2",
+      "nomeCompleto": "Marcos Vinícius Costa",
+      "cpf": "987.654.321-00",
+      "numeroCnh": "09876543210",
+      "categoriaCnh": "E",
+      "dataValidadeCnh": "2026-08-22",
+      "status": "em_viagem"
+    },
+    {
+      "id": "m3",
+      "nomeCompleto": "Antônio Ferreira Souza",
+      "cpf": "456.789.123-45",
+      "numeroCnh": "04567891234",
+      "categoriaCnh": "D",
+      "dataValidadeCnh": "2026-07-01",
+      "status": "disponivel"
+    },
+    {
+      "id": "m4",
+      "nomeCompleto": "Rafael Augusto Lima",
+      "cpf": "321.654.987-12",
+      "numeroCnh": "03216549871",
+      "categoriaCnh": "C",
+      "dataValidadeCnh": "2026-12-10",
+      "status": "disponivel"
+    }
+  ],
+  "rotas": [
+    {
+      "id": "r1",
+      "codigoIdentificador": "RT-001",
+      "pontoOrigem": "Limeira, SP",
+      "pontoDestino": "Campinas, SP",
+      "distanciaTotalKm": 45,
+      "pesoEstimadoCargaKg": 1200,
+      "status": "agendada"
+    },
+    {
+      "id": "r2",
+      "codigoIdentificador": "RT-002",
+      "pontoOrigem": "Campinas, SP",
+      "pontoDestino": "São Paulo, SP",
+      "distanciaTotalKm": 98,
+      "pesoEstimadoCargaKg": 2000,
+      "status": "em_andamento"
+    },
+    {
+      "id": "r3",
+      "codigoIdentificador": "RT-003",
+      "pontoOrigem": "Limeira, SP",
+      "pontoDestino": "Piracicaba, SP",
+      "distanciaTotalKm": 32,
+      "pesoEstimadoCargaKg": 800,
+      "status": "finalizada"
+    },
+    {
+      "id": "r4",
+      "codigoIdentificador": "RT-004",
+      "pontoOrigem": "São Paulo, SP",
+      "pontoDestino": "Santos, SP",
+      "distanciaTotalKm": 72,
+      "pesoEstimadoCargaKg": 3800,
+      "status": "agendada"
+    }
+  ],
+  "viagens": [
+    {
+      "id": "vg1",
+      "veiculoId": "v2",
+      "motoristaId": "m2",
+      "rotaId": "r2",
+      "status": "em_andamento",
+      "progresso": 45,
+      "dataInicio": "2026-06-23T08:00:00"
+    }
+  ]
+}

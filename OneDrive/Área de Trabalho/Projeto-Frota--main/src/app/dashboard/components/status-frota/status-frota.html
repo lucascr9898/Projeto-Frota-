@@ -1,0 +1,22 @@
+<div class="painel-card status-">
+  <div class="painel-header">
+    <h2>Status da Frota</h2>
+    <span class="painel-subtitulo">Distribuição atual dos veículos</span>
+  </div>
+
+  <div class="barra-status">
+    <div class="barra-segmento seg-disponivel" [style.width.%]="percDisponiveis"></div>
+    <div class="barra-segmento seg-viagem" [style.width.%]="percEmViagem"></div>
+    <div class="barra-segmento seg-manutencao" [style.width.%]="percManutencao"></div>
+  </div>
+
+  <ul class="legenda-status">
+    <li><span class="dot dot-disponivel"></span>Disponível <strong>{{ percDisponiveis }}%</strong></li>
+    <li><span class="dot dot-viagem"></span>Em viagem <strong>{{ percEmViagem }}%</strong></li>
+    <li><span class="dot dot-manutencao"></span>Manutenção <strong>{{ percManutencao }}%</strong></li>
+  </ul>
+
+  <a class="link-ver-frota" routerLink="/veiculos">
+    Ver frota completa <mat-icon>arrow_forward</mat-icon>
+  </a>
+</div>

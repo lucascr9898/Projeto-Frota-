@@ -1,0 +1,34 @@
+<div class="painel-card volumetria-card">
+  <div class="painel-header">
+    <h2>Volumetria de Viagens</h2>
+    <span class="painel-subtitulo">Resumo do período atual</span>
+  </div>
+
+  <div class="volumetria-itens">
+    <div class="volumetria-item">
+      <span class="volumetria-numero">{{ viagensAgendadas }}</span>
+      <span class="volumetria-texto">Agendadas</span>
+    </div>
+    <div class="volumetria-item">
+      <span class="volumetria-numero">{{ viagensEmAndamento }}</span>
+      <span class="volumetria-texto">Em andamento</span>
+    </div>
+    <div class="volumetria-item">
+      <span class="volumetria-numero">{{ viagensFinalizadas }}</span>
+      <span class="volumetria-texto">Finalizadas</span>
+    </div>
+  </div>
+
+  <table class="tabela-viagens">
+    <tbody>
+      @for (viagem of viagensRecentes; track viagem.codigo) {
+        <tr>
+          <td class="td-codigo">{{ viagem.codigo }}</td>
+          <td>{{ viagem.origem }} <mat-icon class="icone-seta">arrow_forward</mat-icon> {{ viagem.destino }}</td>
+          <td>{{ viagem.motorista }}</td>
+          <td><span class="tag-status" [ngClass]="statusViagemClasse(viagem.status)">{{ viagem.status }}</span></td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,62 @@
+<div class="example-container" [class.example-is-mobile]="isMobile()">
+
+  <mat-toolbar class="example-toolbar">
+    <button matIconButton (click)="snav.toggle()" class="menu-btn">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <div class="toolbar-brand">
+      <span class="brand-dot"></span>
+      <span class="brand-text">VIA<span class="brand-accent">APPIA</span></span>
+    </div>
+
+    <span class="toolbar-divider">|</span>
+
+    <h1 class="example-app-name">{{ activeItem }}</h1>
+
+    <span class="toolbar-spacer"></span>
+
+    <button matIconButton class="toolbar-icon-btn">
+      <mat-icon>notifications</mat-icon>
+    </button>
+
+    <div class="toolbar-user">
+      <span class="user-avatar">LC</span>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container"
+                        [style.marginTop.px]="isMobile() ? 56 : 0">
+    <mat-sidenav #snav [mode]="isMobile() ? 'over' : 'side'"
+                [fixedInViewport]="isMobile()" fixedTopGap="56">
+
+      <div class="sidenav-inner">
+        <nav class="menu-info">
+          @for (nav of fillerNav; track nav.label) {
+            <a class="menu-link"
+               [class.menu-link-ativo]="activeItem === nav.label"
+               [routerLink]="nav.rota ?? null"
+               routerLinkActive="menu-link-ativo"
+               (click)="selectItem(nav.label)">
+              <mat-icon class="menu-link-icone">{{ nav.icone }}</mat-icon>
+              <span class="menu-link-texto">{{ nav.label }}</span>
+            </a>
+          }
+        </nav>
+
+        <div class="sidenav-footer">
+          <div class="sidebar-divider-line"></div>
+          <button class="botao-sair" (click)="sair()">
+            <mat-icon>logout</mat-icon>
+            <span>Sair</span>
+          </button>
+        </div>
+      </div>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content class="example-sidenav-content">
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

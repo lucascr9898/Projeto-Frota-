@@ -1,0 +1,35 @@
+<sidenav-responsive-example>
+  <div class="veiculos-wrapper">
+
+    <header class="page-header">
+      <div>
+        <h1>Frota Cadastrada</h1>
+        <p>Veículos disponíveis para alocação em rotas e viagens.</p>
+      </div>
+    </header>
+
+    <section class="resumo-frota">
+      <div class="resumo-item">
+        <span class="resumo-numero">{{ frota.totalVeiculos() }}</span>
+        <span class="resumo-texto">Total</span>
+      </div>
+      <div class="resumo-item">
+        <span class="resumo-numero resumo-disponivel">{{ frota.disponiveis() }}</span>
+        <span class="resumo-texto">Disponíveis</span>
+      </div>
+      <div class="resumo-item">
+        <span class="resumo-numero resumo-viagem">{{ frota.emViagem() }}</span>
+        <span class="resumo-texto">Em viagem</span>
+      </div>
+      <div class="resumo-item">
+        <span class="resumo-numero resumo-manutencao">{{ frota.emManutencao() }}</span>
+        <span class="resumo-texto">Manutenção</span>
+      </div>
+    </section>
+
+    <section class="cards-container">
+      <card-overview-example [carros]="frota.carros()"></card-overview-example>
+    </section>
+
+  </div>
+</sidenav-responsive-example>

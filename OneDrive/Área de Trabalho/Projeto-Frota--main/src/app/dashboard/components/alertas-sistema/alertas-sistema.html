@@ -1,0 +1,37 @@
+<!--
+  Este componente já vem com a "moldura" do card (.painel-card.alertas-card)
+  porque, no layout original do dashboard, ele ocupa uma coluna inteira do
+  grid de painéis. Assim, quem usa <app-alertas-sistema> não precisa
+  embrulhar em nenhuma div extra — basta colocar a tag dentro do grid.
+-->
+<div class="painel-card alertas-card">
+  <div class="painel-header">
+    <h2>Alertas do Sistema</h2>
+    <span class="painel-subtitulo">Pontos que exigem atenção</span>
+  </div>
+
+  <div class="alerta-bloco">
+    <h3 class="h3"><mat-icon>badge</mat-icon> CNH próxima do vencimento</h3>
+    @for (alerta of cnhAlertas; track alerta.cnh) {
+      <div class="alerta-linha">
+        <div>
+          <strong>{{ alerta.nome }}</strong>
+          <span class="alerta-meta">Vence em {{ alerta.validade | date: 'dd/MM/yyyy' }}</span>
+        </div>
+        <span class="alerta-dias" [class.alerta-critico]="alerta.diasRestantes <= 7">{{ alerta.diasRestantes }} dias</span>
+      </div>
+    }
+  </div>
+
+  <div class="alerta-bloco">
+    <h3><mat-icon>build_circle</mat-icon> Manutenção preventiva</h3>
+    @for (alerta of manutencaoAlertas; track alerta.placa) {
+      <div class="alerta-linha">
+        <div>
+          <strong>{{ alerta.modelo }}</strong>
+          <span class="alerta-meta">{{ alerta.placa }} &middot; {{ alerta.motivo }}</span>
+        </div>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,159 @@
+/* Estrutura Geral */
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-sidenav-container { flex: 1; }
+.example-is-mobile .example-sidenav-container { flex: 1 0 auto; }
+
+.example-sidenav-content {
+  background: #eef1f4;
+  padding: 28px;
+  box-sizing: border-box;
+}
+
+/* Toolbar */
+.example-toolbar {
+  background: #213d46 !important;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 20px;
+}
+
+.menu-btn { color: #ffffff; }
+.toolbar-brand { display: flex; align-items: center; gap: 8px; }
+.brand-dot { width: 8px; height: 8px; border-radius: 50%; background: #f3551c; }
+.brand-text { color: #ffffff; font-weight: 700; font-size: 0.95rem; }
+.brand-accent { color: #f3551c; }
+.toolbar-divider { color: rgba(255, 255, 255, 0.25); font-size: 1.1rem; }
+.example-app-name { color: #ffffff; font-size: 1rem; font-weight: 500; margin: 0; opacity: 0.85; }
+.toolbar-spacer { flex: 1; }
+.toolbar-icon-btn { color: #ffffff; opacity: 0.8; }
+.user-avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: #f3551cea; color: #ffffff; font-weight: 700; font-size: 0.85rem;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Sidenav */
+.mat-sidenav {
+  width: 250px;
+  background-color: #213d46 !important;
+  border-right: none !important;
+}
+
+.sidenav-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Menu — agora HTML/CSS puro, sem mat-list-item */
+.menu-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 16px;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 11px 14px;
+  border-radius: 10px;
+  transition: background 0.15s ease;
+}
+
+.menu-link-icone {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+.menu-link-texto {
+  color: #ffffff !important;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.menu-link:hover {
+  background: rgba(243, 85, 28, 0.18);
+}
+
+.menu-link:hover .menu-link-texto {
+  color: #ffffff !important;
+}
+
+.menu-link:hover .menu-link-icone {
+  color: #ffffff;
+}
+
+.menu-link-ativo {
+  background: rgba(243, 85, 28, 0.22);
+  border-left: 3px solid #f3551c;
+}
+
+.menu-link-ativo .menu-link-texto {
+  color: #f3551c !important;
+  font-weight: 600;
+}
+
+.menu-link-ativo .menu-link-icone {
+  color: #f3551c;
+}
+
+/* Rodapé fixo */
+.sidenav-footer {
+  margin-top: auto;
+  padding: 0 16px 20px;
+}
+
+.sidebar-divider-line {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 0 0 12px;
+}
+
+.botao-sair {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 14px;
+  background: transparent;
+  border: 1px solid rgba(243, 85, 28, 0.4);
+  border-radius: 10px;
+  color: #f3551c;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.botao-sair:hover {
+  background: #f3551c;
+  border-color: #f3551c;
+  color: #ffffff;
+}
+
+.botao-sair mat-icon {
+  font-size: 1.1rem;
+  width: 1.1rem;
+  height: 1.1rem;
+}

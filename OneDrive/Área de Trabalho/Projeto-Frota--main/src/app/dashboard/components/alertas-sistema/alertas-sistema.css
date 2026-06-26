@@ -1,0 +1,115 @@
+/*
+  Estas duas classes (.painel-card e .painel-header h2 / .painel-subtitulo)
+  existem repetidas em status-frota.css e volumetria-viagens.css também.
+  É a "moldura" comum dos 3 cards do meio do dashboard: fundo cinza claro,
+  borda, padding e cabeçalho com título + subtítulo.
+
+  Por causa do View Encapsulation do Angular, cada componente só aplica o
+  CSS do seu próprio arquivo — então essa classe precisa estar duplicada
+  nos 3 lugares (não dá pra "herdar" do dashboard.css). Faltava aqui, e por
+  isso o card de Alertas aparecia sem fundo nem borda, diferente dos outros
+  dois.
+*/
+.painel-card {
+  background: #f9fafb;
+  border: 1px solid #e5e8eb;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.painel-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #213d46;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 8px;
+}
+
+.painel-subtitulo {
+  font-size: 0.76rem;
+  color: #6b7280;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Alertas */
+.alerta-bloco {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+}
+
+.alerta-bloco h3 {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  /* Estava "#ffffff" (branco) — ficava invisível em fundo claro.
+     O branco provavelmente é resquício de uma versão anterior do
+     dashboard com fundo escuro nesse bloco. */
+  color: #213d46;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alerta-bloco h3 mat-icon {
+  font-size: 1rem;
+  width: 1rem;
+  height: 1rem;
+  color: #f3551c;
+}
+
+.alerta-linha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  /* Estava igual ao fundo do card pai (#f9fafb) — a linha ficava sem
+     contraste nenhum. Os outros cards (ex: volumetria) usam branco aqui. */
+  background: #ffffff;
+  border: 1px solid #eef1f4;
+}
+
+.alerta-linha strong {
+  display: block;
+  font-size: 0.8rem;
+  color: #213d46;
+}
+
+.alerta-meta {
+  display: block;
+  font-size: 0.7rem;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.alerta-dias {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #1f8a5f;
+  background: rgba(31, 138, 95, 0.12);
+  padding: 3px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.alerta-critico {
+  color: #b3261e;
+  background: rgba(179, 38, 30, 0.12);
+}

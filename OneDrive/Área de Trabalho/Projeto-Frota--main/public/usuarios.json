@@ -1,0 +1,4 @@
+[
+  { "usuario": "admin", "senha": "admin123", "perfil": "admin", "nome": "Administrador" },
+  { "usuario": "operador", "senha": "operador123", "perfil": "operacional", "nome": "Operador" }
+]
