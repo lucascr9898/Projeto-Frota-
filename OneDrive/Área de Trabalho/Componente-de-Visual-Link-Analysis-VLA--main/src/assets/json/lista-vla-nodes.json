@@ -1,0 +1,118 @@
+{
+  "nodes": [
+    {
+      "id": "n1",
+      "label": "João Silva",
+      "type": "person",
+      "metadata": {
+        "documento": "CPF 123.456.789-00",
+        "profissao": "Empresário"
+      }
+    },
+    {
+      "id": "n2",
+      "label": "Maria Souza",
+      "type": "person",
+      "metadata": {
+        "documento": "CPF 987.654.321-00",
+        "profissao": "Gerente Comercial"
+      }
+    },
+    {
+      "id": "n3",
+      "label": "Empresa Alfa Ltda",
+      "type": "company",
+      "metadata": {
+        "cnpj": "12.345.678/0001-90",
+        "segmento": "Comércio"
+      }
+    },
+    {
+      "id": "n4",
+      "label": "Beta Serviços S.A.",
+      "type": "company",
+      "metadata": {
+        "cnpj": "98.765.432/0001-10",
+        "segmento": "Serviços"
+      }
+    },
+    {
+      "id": "n5",
+      "label": "(61) 99999-0000",
+      "type": "phone",
+      "metadata": {
+        "operadora": "Operadora A"
+      }
+    },
+    {
+      "id": "n6",
+      "label": "(61) 98888-1111",
+      "type": "phone",
+      "metadata": {
+        "operadora": "Operadora B"
+      }
+    },
+    {
+      "id": "n7",
+      "label": "joao@email.com",
+      "type": "email",
+      "metadata": {
+        "provedor": "Email pessoal"
+      }
+    },
+    {
+      "id": "n8",
+      "label": "contato@empresa.com",
+      "type": "email",
+      "metadata": {
+        "provedor": "Email corporativo"
+      }
+    },
+    {
+      "id": "n9",
+      "label": "SQN 100 Bloco A, Brasília/DF",
+      "type": "address",
+      "metadata": {
+        "cidade": "Brasília",
+        "estado": "DF"
+      }
+    },
+    {
+      "id": "n10",
+      "label": "ABC-1234",
+      "type": "vehicle",
+      "metadata": {
+        "modelo": "Sedan",
+        "cor": "Prata"
+      }
+    },
+    {
+      "id": "n11",
+      "label": "XYZ-9876",
+      "type": "vehicle",
+      "metadata": {
+        "modelo": "Hatch",
+        "cor": "Preto"
+      }
+    },
+    {
+      "id": "n12",
+      "label": "CPF 123.456.789-00",
+      "type": "document",
+      "metadata": {
+        "tipoDocumento": "CPF"
+      }
+    },
+    {
+      "id": "n13",
+      "label": "CNPJ 12.345.678/0001-90",
+      "type": "document",
+      "metadata": {
+        "tipoDocumento": "CNPJ"
+      }
+    }
+  ]
+}
+
+  
+  

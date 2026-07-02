@@ -1,0 +1,15 @@
+
+<div class="filter-panel">
+    <h3 class="filter-title">Filtro por entidade </h3>
+
+    <ul class="filter-list">
+        @for (filter of filters; track filter.type) {
+        <li class="filter-item"
+            [class.filter-item--active]="filter.active"
+            (click)="toggleFilter(filter)">
+
+ <svg [lucideIcon]="filter.icon" [color]="filter.active ? filter.color : '#9ca3af'" [size]="18"></svg>            <span class="filter-label">{{filter.label}}</span>
+        </li>
+        }
+    </ul>
+</div>
